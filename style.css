@@ -1,0 +1,341 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #3498db, #2c3e50); /* Gradient background */
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+
+button#addTaskButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button#addTaskButton:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.modal-content:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Task table styles */
+#taskTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#taskTable th,
+#taskTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#taskTable th {
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#taskTable th:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+}
+
+#taskTable td {
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#taskTable tr:hover td {
+    background-color: #f9f9f9; /* Change background color of row on hover */
+}
+
+.options {
+    cursor: pointer;
+    margin-right: 5px;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.options:hover {
+    color: red; /* Change color on hover */
+}
+
+/* Add Task Modal styles */
+
+#addTaskModal .modal-content {
+    background-color: #fff;
+    margin: 1% auto; /* Adjusted margin from the top */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    width: 60%; /* Adjust modal width */
+    max-width: 600px; /* Set maximum width */
+}
+
+
+#addTaskModal .close {
+    color: #555;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+#addTaskModal .close:hover {
+    color: #333; /* Darken color on hover */
+}
+
+#addTaskModal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333; /* Dark text color */
+}
+
+#addTaskModal input[type="text"],
+#addTaskModal input[type="date"],
+#addTaskModal select {
+    width: 100%;
+    padding: 10px; /* Reduced padding */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 14px; /* Reduced font size */
+}
+
+#addTaskModal input[type="text"]::placeholder,
+#addTaskModal input[type="date"]::placeholder {
+    color: #999; /* Placeholder text color */
+}
+
+#addTaskModal select {
+    appearance: none; /* Remove default select styles */
+    background-color: #f9f9f9; /* Light gray background */
+    color: #333; /* Dark text color */
+}
+
+#addTaskModal label {
+    font-weight: bold;
+    color: #333; /* Dark text color */
+}
+
+
+#taskid{
+    padding-bottom: 10px;
+}
+
+
+#addTaskModal button {
+    padding: 12px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#addTaskModal button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+
+.date-input {
+    display: inline-block; /* Display the date inputs in the same line */
+    width: 45%; /* Adjusted width for each input */
+    margin-right: 5%; /* Add some space between the inputs */
+}
+
+.date-input:last-child {
+    margin-right: 0; /* Remove margin from the last input */
+}
+
+
+.date-input-row{
+    padding-top: 10px;
+
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden; /* Hide overflow to prevent icon from extending beyond container */
+}
+
+#searchInput {
+    flex: 1; /* Take remaining width */
+    padding: 8px 10px;
+    border: none;
+    font-size: 16px;
+}
+
+#searchButton {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+#searchButton:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+/* FontAwesome icon */
+.fa-search {
+    font-size: 16px;
+}
+
+
+/* CSS for remaining count label */
+.remaining-count {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.add-task-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add margin to separate from input fields */
+    
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column; /* Stack input fields vertically */
+}
+
+
+#addTaskButtonContainer {
+    position: relative; /* Ensure the container is positioned */
+    display: flex;
+    display: inline;
+    
+}
+
+/* Assigned Persons Container */
+#assignedPersonsContainer {
+    position: absolute; /* Position relative to the parent container */
+    right: 0; /* Align with the right side of the parent container */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    padding-top: 8px;
+    display: flex; /* Display initials in a row */
+}
+
+.circular-button {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%; /* Ensure circular shape */
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    margin-left: 5px; /* Add margin between initials */
+    margin-right: 5px; /* Add margin between initials */
+    cursor: pointer;
+    display: inline-block; /* Display buttons in the same row */
+}
+
+.remaining-count {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%; /* Ensure circular shape */
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    margin-left: 5px; /* Add margin between initials */
+    cursor: pointer;
+}
+
+.error-message{
+    color: red;
+}
+
+
+
+@media (max-width: 768px) {
+    #assignedPersonsContainer {
+      top: 40%; /* Adjust position for smaller screens */
+      max-width: 100%; /* Allow container to occupy full width */
+     position: relative;
+
+        
+    }
+}
+
+
